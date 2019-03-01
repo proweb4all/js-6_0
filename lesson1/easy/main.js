@@ -14,9 +14,7 @@ let appData = {
 
 let expenseItem = prompt('Введите 1-ю обязательную статью расходов в этом месяце', '');
 let expenseAmount = +prompt('Во сколько обойдется?', '');
-appData.expenses = {
-    [expenseItem]: expenseAmount
-};
+appData.expenses[expenseItem] = expenseAmount;
 
 expenseItem = prompt('Введите 2-ю обязательную статью расходов в этом месяце', '');
 expenseAmount = +prompt('Во сколько обойдется?', '');
