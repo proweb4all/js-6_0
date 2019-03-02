@@ -1,19 +1,14 @@
 //'use strict';
 
-let week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница',
-            'Суббота', 'Воскресенье'];
+let week = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+let date = new Date();
+let today = date.getDay();
+let currentDay;
 week.forEach(function(item, i) {
-    switch (i) {
-        case 4: 
-            document.body.innerHTML += '<i>' + item + '</i><br>';
-            break;
-        case 5: 
-        case 6: 
-            document.body.innerHTML += '<b>' + item + '</b><br>';
-            break;
-        default:
-            document.body.innerHTML += item + '<br>';
-    };
+    currentDay = item;
+    if (i == today) currentDay = '<i>' + currentDay + '</i>';
+    if (i == 0 || i == 6) currentDay = '<b>' + currentDay + '</b>';
+    document.body.innerHTML += currentDay + '<br>';
 });
 
 let arr = ['176547', '25426', '368976', '490970', '576978', '6899', '774586'];
