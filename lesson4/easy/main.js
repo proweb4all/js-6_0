@@ -1,6 +1,5 @@
 //'use strict';
 let money, time;
-//start();
 let appData = {
     budget: money,
     timeData: time,
@@ -57,7 +56,6 @@ let appData = {
         testArr.forEach(function(item){
             appData.income.push(item.trim());
         });
-        //testArr.sort();
         appData.income.sort();
     },
     // Расчет дневного бюджета
