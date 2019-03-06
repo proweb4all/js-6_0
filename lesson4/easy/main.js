@@ -60,6 +60,12 @@ let appData = {
             };
         });
         appData.income.sort();
+        document.body.innerHTML = 'Способы доп. заработка:<br>';
+        console.log('Способы доп. заработка:');
+        appData.income.forEach(function(item, i) {
+            document.body.innerHTML += (i+1) + ' - ' + item + '<br>';
+            console.log((i+1) + ' - ' + item);
+        });
     },
     // Расчет дневного бюджета
     detectDayBudget: function(){
@@ -124,13 +130,6 @@ let appData = {
 appData.chooseIncome();
 console.log(appData);
 
-document.body.innerHTML = 'Способы доп. заработка:<br>';
-console.log('Способы доп. заработка:');
-let currentIncome;
-appData.income.forEach(function(item, i) {
-    document.body.innerHTML += (i+1) + ' - ' + item + '<br>';
-    console.log((i+1) + ' - ' + item);
-});
 console.log('===========================\nНаша программа включает в себя данные:');
 for(let item in appData){
     console.log(item);
