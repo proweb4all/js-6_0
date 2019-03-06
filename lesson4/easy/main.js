@@ -54,7 +54,10 @@ let appData = {
         itemsIncome = prompt('Может что-то еще?', '');
         if (itemsIncome) {testArr.push(itemsIncome)};
         testArr.forEach(function(item){
-            appData.income.push(item.trim());
+            item = item.trim();
+            if (isNaN(item)){
+                appData.income.push(item);
+            };
         });
         appData.income.sort();
     },
