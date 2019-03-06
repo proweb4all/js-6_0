@@ -52,7 +52,7 @@ let appData = {
         } while (!appData.inputStr(itemsIncome, 200));
         testArr = itemsIncome.split(',');
         itemsIncome = prompt('Может что-то еще?', '');
-        if (itemsIncome) {testArr.push(itemsIncome)};
+        if (appData.inputStr(itemsIncome, 50)) {testArr.push(itemsIncome)};
         testArr.forEach(function(item){
             item = item.trim();
             if (isNaN(item)){
@@ -110,7 +110,7 @@ let appData = {
     },
     // Проверка корректности ввода строки (статья расходов)
     inputStr: function(name, maxLength = 1000){
-        if ((typeof(name) != null || name.length > maxLength) && (name != '')) {
+        if ((typeof(name) != null || name.length > maxLength) && (name != '') && isNaN(name)) {
             return name;
         } else {
             return (false);
