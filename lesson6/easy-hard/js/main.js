@@ -70,7 +70,8 @@ startBtn.addEventListener('click', function(){
 // Ввод только чисел в числовые поля
 for (elem of inputsNumber){
     elem.addEventListener('keyup', function(e){
-        this.value = this.value.replace (/\D/, '')
+//        this.value = this.value.replace (/\D/, '')
+        this.value = this.value.replace (/[^0-9]/g, '')
     });
 };
 
