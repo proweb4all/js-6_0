@@ -3,7 +3,6 @@ func("ACGTGGTCTTAA");
 function func(dnk){
     console.log('ДНК: ' + dnk);
     let rnk = '';
-    //dnk.replace(/G/gi, 'C').replace(/'C'/gi, 'G').replace(/'T'/gi, 'A').replace(/'A'/gi, 'U');
     for (let i = 0; i < dnk.length; i++){
         switch (dnk[i]){
             case 'G':
@@ -24,14 +23,6 @@ function func(dnk){
     };
     console.log('РНК: ' + rnk);
 };
-
-
-
-//результат =>>> "UGCACCAGAAUU"
-
-
-//G -> C, C -> G, T -> A, A -> U.
-
 
 
 
