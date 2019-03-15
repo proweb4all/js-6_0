@@ -2,22 +2,23 @@
 window.addEventListener('DOMContentLoaded', function() {
 
     class Options {
-        constructor(height = '', width = '', background = '', fontSize = '', textAlign = ''){
+        constructor(height = '', width = '', bg = '', fontSize = '', textAlign = ''){
             this.height = height;
             this.width = width;
-            this.background = background;
+            this.bg = bg;
             this.fontSize = fontSize;
             this.textAlign = textAlign;
         }
         createDiv(textDiv = ''){
             let newDiv = document.createElement('div');
-            newDiv.textContent = textDiv;
             let textCSS = '';
-            for(let key in this){
-                if (this[key]) textCSS += `${key}: ${this[key]};\n`;
-            };
-            console.log(textCSS);
+            if (this.height) textCSS += `height: ${this.height};\n`;
+            if (this.width) textCSS += `width: ${this.width};\n`;
+            if (this.bg) textCSS += `background: ${this.bg};\n`;
+            if (this.fontSize) textCSS += `font-size: ${this.fontSize};\n`;
+            if (this.textAlign) textCSS += `text-align: ${this.textAlign};`;
             newDiv.style.cssText = textCSS;
+            newDiv.textContent = textDiv;
             document.body.appendChild(newDiv);
         }
     };
@@ -26,12 +27,3 @@ window.addEventListener('DOMContentLoaded', function() {
     newDiv.createDiv('Новый Div');
 
 });
-
-
-// ) Используя синтаксис ES6 в отдельном документе:
-// •        Создать класс options
-// •        Он должен содержать свойства: height, width, bg, fontSize, textAlign
-// •        Он должен содержать метод, создающий новый div на странице, записывающий в него любой текст
-//           и при помощи cssText изменять свой стиль из переданных параметров
-// •        Создать новый объект через класс
-// •        Вызвать его метод и получить элемент на странице
