@@ -38,12 +38,19 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Определение типа анимации
     function browser(){
-        if (window.screen.width <= 800) {
+        let ua = navigator.userAgent.toLowerCase();
+        console.log(ua);
+        // if (window.screen.width <= 800) {
+        if( ua.match(/android/i)
+            || ua.match(/webos/i)
+            || ua.match(/iphone/i)
+            || ua.match(/ipad/i)
+            || ua.match(/ipod/i)
+            || ua.match(/blackberry/i)
+            || ua.match(/windows phone/i)){
             nameAnimation = 'Без анимации';
             return 0;
         };
-        let ua = navigator.userAgent.toLowerCase();
-        console.log(ua);
         if (ua.search(/msie/) > -1 || ua.search(/trident/) > -1 || ua.search(/edge/) > -1) {
             nameAnimation = 'CSS-анимация';
             return 1;
