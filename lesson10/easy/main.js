@@ -25,5 +25,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
     let newDiv = new Options('150px', '150px', 'red', '24px', 'center');
     newDiv.createDiv('Новый Div');
-
+    newDiv = new Options('newDiv');
+    newDiv.createDiv();
+    newDiv = new Options();
+    newDiv.createDiv();
 });
