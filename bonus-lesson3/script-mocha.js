@@ -39,6 +39,9 @@ describe('Тест3', function(){
     it ('Функция each возвращает array', function(){
         assert.typeOf(each(arr1, myFunc), 'array');
 	});
+    it ('Функция each возвращает array[8, 7, 6, 5, 4]', function(){
+        assert.sameOrderedMembers(each(arr1, myFunc), [8, 7, 6, 5, 4]);
+    });
     it ('Функция each возвращает array длиной 5', function(){
         assert.equal(each(arr1, myFunc).length, 5);
     });
