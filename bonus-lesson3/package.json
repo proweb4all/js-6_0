@@ -1,0 +1,19 @@
+{
+  "name": "bonus-lesson3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "^6.0.2",
+    "chai": "^4.2.0",
+    "jest": "^24.5.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
